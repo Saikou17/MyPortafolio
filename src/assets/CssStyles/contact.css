@@ -1,0 +1,37 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    .footer {
+        @apply bg-gray-900 text-white py-6 ;
+    }
+
+    .footer-container {
+        @apply max-w-6xl mx-auto px-6 flex flex-col items-center text-center space-y-4;
+    }
+
+    .footer-logo .logo-img {
+        @apply w-24 h-24;
+    }
+
+    .footer-links {
+        @apply flex space-x-6 text-sm font-medium;
+    }
+
+    .footer-link {
+        @apply text-gray-300 hover:text-white transition duration-300;
+    }
+
+    .footer-social {
+        @apply flex space-x-4;
+    }
+
+    .social-icon {
+        @apply text-xl text-gray-400 hover:text-white transition duration-300;
+    }
+
+    .footer-copy {
+        @apply text-xs text-gray-500;
+    }
+}

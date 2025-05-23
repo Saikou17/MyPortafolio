@@ -1,0 +1,220 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components
+{
+    .habilidades_section
+    {
+        background-color: rgb(165, 203, 237);
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        padding-top: 30px;
+        overflow: hidden;
+    }
+
+    .habilidades_container
+    {
+        position: relative;
+        top: 0;
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        gap: 10px;
+        padding: 10px;
+        margin: 10px;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        justify-content: center;
+        
+        .habilidad
+        {
+            font-family: "ADLaM Display", serif;
+            font-style: normal;
+            font-size: 2.5vw;
+            word-wrap: break-word;
+            white-space: normal;
+            text-align: center;
+            padding: 1rem;
+            height: auto;
+            color: white;
+            border-radius: 20px;
+            background-color: #061A40;
+            border-width: 3px;
+            border-color: black;
+            border-style: solid;
+            padding: 0.9rem;
+            display: flex;
+            flex: 1 1 0; /* Ensures equal horizontal size for all items */
+            justify-content: space-between; /* distribuye con separación */
+            flex-direction: row;
+            align-items: center;
+        }
+
+        .habilidad > p {
+          flex: 1 1 100%;
+          text-align: center;
+        }
+        
+        .habilidad > .progress {
+            flex: 1 1 50%;
+        }
+
+        .habilidad:hover
+        {
+          background-color: oklch(37.9% 0.146 265.522);
+          box-shadow: black 0px 0px 10px;
+        }
+
+        .habilidad:nth-child(-1n+3)
+        {
+            grid-column: span 4;
+        }
+
+        .habilidad:nth-last-child(2) 
+        {
+            grid-row-start: 2;
+            grid-column: 3 / span 4;
+        }
+
+        .habilidad:nth-last-child(1) 
+        {
+            grid-row-start: 2;
+            grid-column: 7 / span 4;
+        }
+
+        .progress {
+            width: 7rem;
+            height: 7rem;
+            background: none;
+            position: relative;
+          }
+          
+          .progress::after {
+            content: "";
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            border: 6px solid #eee;
+            position: absolute;
+            top: 0;
+            left: 0;
+          }
+          
+          .progress>span {
+            width: 50%;
+            height: 100%;
+            overflow: hidden;
+            position: absolute;
+            top: 0;
+            z-index: 1;
+          }
+          
+          .progress .progress-left {
+            left: 0;
+          }
+          
+          .progress .progress-bar {
+            width: 100%;
+            height: 100%;
+            background: none;
+            border-width: 6px;
+            border-style: solid;
+            position: absolute;
+            top: 0;
+          }
+          
+          .progress .progress-left .progress-bar {
+            left: 100%;
+            border-top-right-radius: 80px;
+            border-bottom-right-radius: 80px;
+            border-left: 0;
+            -webkit-transform-origin: center left;
+            transform-origin: center left;
+          }
+          
+          .progress .progress-right {
+            right: 0;
+          }
+          
+          .progress .progress-right .progress-bar {
+            left: -100%;
+            border-top-left-radius: 80px;
+            border-bottom-left-radius: 80px;
+            border-right: 0;
+            -webkit-transform-origin: center right;
+            transform-origin: center right;
+          }
+          
+          .progress .progress-value {
+            position: absolute;
+            top: 0;
+            left: 0;
+          }
+          
+        .fade-enter-active, .fade-leave-active {
+          transition: opacity 0.5s ease;
+        }
+
+        .fade-enter-from, .fade-leave-to {
+          opacity: 0;
+        }
+
+    }
+
+    .habilidades_display
+    {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      padding-top: 30px;
+
+
+      .habilidades_examples
+      {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        padding: 10px;
+        margin: 10px;
+        gap: 10px;
+  
+      }
+
+      .habilidades_pair
+      {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        padding: 10px;
+        margin: 10px;
+        gap: 10px;
+        width: calc(33.33% - 20px); /* Adjust width to fit 3 items per row */
+      }
+    }
+
+    .habilidad_title
+    {
+        font-family: "ADLaM Display", serif;
+        font-style: normal;
+        font-size: calc(2vw + 2vh + 1px);
+        color: rgb(0, 0, 0);
+        text-align: center;
+        margin: 10px;
+    }
+
+    @media (min-width: 640px) {
+      /* Mobile breakpoint si estás usando Tailwind por defecto (sm) */
+      .habilidad > p {
+          flex: 1 1 50%;
+      }
+  }
+
+}

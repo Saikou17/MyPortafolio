@@ -1,0 +1,72 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+
+  .projects_container {
+    background-color: #006DAA;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: visible;
+  }
+
+  .projects_title {
+    color: white;
+    font-family: "ADLaM Display", serif;
+    font-style: normal;
+    font-size: calc(2vw + 2vh + 1rem);
+    text-align: center;
+    padding-top: 40px;
+  }
+
+  .projects_display {
+    display: grid;
+    grid-template-columns: repeat(2, 45vw);
+    grid-auto-rows: 30vw;
+    row-gap: 10px;
+    margin-bottom: 10px;
+    position: relative;
+    overflow: visible;
+    text-align: left;
+    align-items: center;
+    justify-content: center;
+
+    @media (min-width: 641px) {
+      grid-template-columns: repeat(2, 45vw);
+      grid-template-rows: repeat(2, 30vw);
+      row-gap: 20px;
+      margin-top: 40px;
+      margin-left: 40px;
+      margin-right: 40px;
+      align-items: initial;
+      justify-content: initial;
+    }
+  }
+
+  .carousel-control-prev {
+    justify-content: start;
+  }
+
+  .carousel-control-next {
+    justify-content: end;
+  }
+
+  .carousel-indicators {
+    margin-top: 20px;
+    position: unset;
+    justify-content: center;
+  }
+
+  .projects_slider {
+    display: inline-block;
+    padding-inline: 3px;
+
+    @media (max-width: 640px) {
+      flex: 0 0 auto;
+      scroll-snap-align: start;
+      width: 80vw;
+    }
+  }
+}
